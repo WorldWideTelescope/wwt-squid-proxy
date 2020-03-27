@@ -37,6 +37,7 @@ The main purpose of this pipeline is to automate the build and publication of
 this image through the `azure-pipelines.yml` file. The image ultimately
 emerges as
 [aasworldwidetelescope/proxy](https://hub.docker.com/repository/docker/aasworldwidetelescope/proxy).
+A webhook is configured there to update the running service on Azure.
 
 
 ## Contributions
