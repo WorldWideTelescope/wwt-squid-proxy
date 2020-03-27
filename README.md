@@ -24,6 +24,19 @@ be served from the core domain.
 [Azure Application Gateway]: https://azure.microsoft.com/en-us/services/application-gateway/
 
 
+## Building / Installation
+
+This isn't really software that "install" yourself. The output artifact of
+this repository is a Docker image that you obtain with the command:
+
+```
+docker build -t aasworldwidetelescope/proxy:latest .
+```
+
+The main purpose of this pipeline is to automate the build and publication of
+this image through the `azure-pipelines.yml` file.
+
+
 ## Contributions
 
 Contributions are welcome! See [the WorldWide Telescope contributors’ guide]
