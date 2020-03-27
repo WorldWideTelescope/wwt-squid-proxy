@@ -1,9 +1,12 @@
 # Copyright 2020 the .NET Foundation
 # Licensed under the MIT License
+#
+# To check what version of Squid is currently out for 19.10, see:
+# https://packages.ubuntu.com/eoan/squid
 
 FROM ubuntu:19.10
 
-ENV SQUID_VERSION=4.8-1ubuntu2.1 \
+ENV SQUID_VERSION=4.8 \
     SQUID_CACHE_DIR=/var/spool/squid \
     SQUID_LOG_DIR=/var/log/squid \
     SQUID_USER=proxy
