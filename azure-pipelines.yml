@@ -14,7 +14,7 @@ stages:
 - stage: BuildDeploy
   displayName: Build and deploy the Docker image
 
-  jobs:  
+  jobs:
   - job: Build
     displayName: Build
     pool:
@@ -30,3 +30,4 @@ stages:
         buildContext: '$(Build.SourcesDirectory)'
         tags: |
           $(tag)
+          latest
