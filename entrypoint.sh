@@ -2,7 +2,7 @@
 # Copyright 2020 the .NET Foundation
 # Licensed under the MIT License
 
-set -euo pipefail
+set -eo pipefail
 
 create_log_dir() {
   mkdir -p ${SQUID_LOG_DIR}
