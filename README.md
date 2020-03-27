@@ -28,7 +28,7 @@ be served from the core domain.
 
 Contributions are welcome! See [the WorldWide Telescope contributors’ guide]
 for applicable information. We use a standard workflow with issues and pull
-requests. All participants in [wwt_data_formats] and the WWT communities must
+requests. All participants in this repository and the WWT communities must
 abide by the [WWT Code of Conduct].
 
 [the WorldWide Telescope contributors’ guide]: https://worldwidetelescope.github.io/contributing/
