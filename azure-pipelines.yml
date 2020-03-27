@@ -24,7 +24,7 @@ stages:
       displayName: Build and deploy the image
       inputs:
         containerRegistry: 'worldwidetelescope@DockerHub'
-        repository: 'aasworldwidetelescope'
+        repository: 'aasworldwidetelescope/proxy'
         command: 'buildAndPush'
         Dockerfile: '$(Build.SourcesDirectory)/Dockerfile'
         buildContext: '$(Build.SourcesDirectory)'
