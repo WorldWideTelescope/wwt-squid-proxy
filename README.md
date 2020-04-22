@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/aasworldwidetelescope/WWT/_apis/build/status/WorldWideTelescope.wwt-squid-proxy?branchName=master)](https://dev.azure.com/aasworldwidetelescope/WWT/_build/latest?definitionId=6&branchName=master)
+
 # WWT Squid Proxy Server
 
 This repository contains setup for a backend component of the [AAS]
