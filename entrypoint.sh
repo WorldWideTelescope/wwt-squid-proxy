@@ -1,5 +1,5 @@
 #!/bin/bash
-# Copyright 2020 the .NET Foundation
+# Copyright 2020-2021 the .NET Foundation
 # Licensed under the MIT License
 
 set -eo pipefail
@@ -27,12 +27,17 @@ elif [[ ${1} == squid || ${1} == $(which squid) ]]; then
   set --
 fi
 
-# default behaviour is to launch squid
+# default behaviour is to launch squid and fetcher
 if [[ -z ${1} ]]; then
   if [[ ! -d ${SQUID_CACHE_DIR}/00 ]]; then
     echo "Initializing cache..."
     $(which squid) -N -f /etc/squid/squid.conf -z
   fi
+
+  # If the fetcher crashes we're toast. Fingers crossed ...
+  echo "Starting fetcher..."
+  /fetcher.py &
+
   echo "Starting squid..."
   exec $(which squid) -f /etc/squid/squid.conf -NYCd 1 ${EXTRA_ARGS}
 else
