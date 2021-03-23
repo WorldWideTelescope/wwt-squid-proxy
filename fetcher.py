@@ -54,6 +54,16 @@ class ProxyHandler(tornado.web.RequestHandler):
         if not parsed.netloc:
             raise tornado.web.HTTPError(400, f'URL {url!r} is not absolute')
 
+        # We sometimes end up being asked to handle VirtualEarth tiles because
+        # their SSL configuration is broken -- we're basically laundering SSL
+        # rather than CORS. We'll vouch for this content to keep things running
+        # smoothly.
+
+        if parsed.netloc.endswith('tiles.virtualearth.net') and parsed.scheme == 'https':
+            # It feels dirty to use this underscored method but apparently it's part
+            # of the namedtuple API ...
+            url = parsed._replace(scheme='http').geturl()
+
         http = tornado.httpclient.AsyncHTTPClient()
 
         # Annoyingly, you need to have a `header_callback` in order to be able
