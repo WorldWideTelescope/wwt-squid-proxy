@@ -19,6 +19,9 @@ import tornado.ioloop
 import tornado.web
 from urllib.parse import urlparse
 
+from tornado.log import enable_pretty_logging
+enable_pretty_logging()
+
 PASSTHROUGH_HEADERS = [
     'Cache-Control',
     'Content-Encoding',
